@@ -1,0 +1,49 @@
+.cor {
+    width: 200x;
+    height: 700px;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.letras {
+    width: 380  px;
+    height: 480px;
+
+    position: fixed;
+    top: 50%;
+    left: 41%;
+    transform: translate(-50%, -50%);    
+}
+
+.matriz {
+    width: 400px;
+    height: 700px;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.rosas {
+    width: 400px;
+    height: 700px;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.pingente {
+    width: 500px;
+    height: 700px;
+
+    position: fixed;
+    top: 50%;
+    left: 53%;
+    transform: translate(-50%, -50%);
+}

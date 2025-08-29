@@ -1,0 +1,36 @@
+ body {
+      background: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .livro {
+      position: relative;
+      width: 400px;
+      height: 500px;
+      perspective: 1500px; /* profundidade 3D */
+    }
+
+    .pagina {
+      width: 100%;
+      height: 100%;
+      background: white;
+      border: 2px solid #333;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform-origin: left; /* vira pela esquerda */
+      transition: transform 1s ease;
+    }
+
+    .pagina.virada {
+      transform: rotateY(-180deg); /* gira a página */
+    }
+
+    /* conteúdo só para diferenciar */
+    .pagina .conteudo {
+      padding: 20px;
+      font-size: 20px;
+    }
