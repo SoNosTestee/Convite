@@ -55,12 +55,17 @@
     .pagina.esq {
       left: 0;
       width: 60%;
+      background-position: right center;
+      background-attachment: fixed;
+      background-image: url('/images/convite.png');
       transform-origin: left center;
     }
 
     .pagina.dir {
       right: 0;
       width: 40%;
+      background-image: url('/images/convite.png');
+      background-position: right center;
       transform-origin: right center;
     }
 
