@@ -37,7 +37,7 @@
     }
 
     .livro.aberto .fundo {
-      width: 90%; /* ocupa exatamente o espaço entre as páginas abertas */
+      width: 92.5%; /* ocupa exatamente o espaço entre as páginas abertas */
       opacity: 1;
       pointer-events: auto;
     }
@@ -45,8 +45,7 @@
     .pagina {
       position: absolute;
       width: 50%;
-      height: 100%;
-      background: linear-gradient(to bottom, #fff, #eee);
+      height: 101.5%;
       border: 1px solid #ccc;
       overflow: hidden;
       cursor: pointer;
@@ -54,34 +53,31 @@
       transition: transform 1s ease;
     }
 
-    /* orelhas */
-    .pagina::before, .pagina::after {
-      width: 200px;
-      background-color: black;
-    }
 
-    .pagina.esq::before {
-      left: -40px;
-      transform-origin: top right;
-      clip-path: polygon(100% 0, 0% 0, 100% 100%);
-    }
 
-    .pagina.dir::after {
-      right: -40px;
-      transform-origin: top left;
-      clip-path: polygon(0 0, 100% 0, 0 100%);
-    }
+
+
 
     /* esquerda e direita */
     .pagina.esq {
+      width: 60%;
       left: 0;
       transform-origin: left center;
+      background-color: rgb(181, 199, 151);
     }
 
     .pagina.dir {
+      width: 40%;
       right: 0;
       transform-origin: right center;
+      background-color: rgb(181, 199, 151)
     }
+
+
+
+
+
+
 
     /* conteúdo da página */
     .pagina .conteudo {
@@ -106,3 +102,16 @@
     .livro.aberto .pagina.dir::after {
       transform: rotateZ(45deg) translate(-10px, -10px);
     }
+
+
+
+
+.letras {
+  width: 120%;
+  height: 100%;
+
+  position: absolute;
+  top: 0%;
+  left: -10%;
+}
+
