@@ -1,36 +1,108 @@
  body {
-      background: #f0f0f0;
+      margin: 0;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
+      background: #f0f0f0;
+      font-family: Georgia, serif;
     }
 
     .livro {
       position: relative;
-      width: 400px;
-      height: 500px;
-      perspective: 1500px; /* profundidade 3D */
+      width: 500px;
+      height: 600px;
+      perspective: 2000px;
+    }
+
+    /* fundo central, ajustado ao espaço entre páginas */
+    .fundo {
+      position: absolute;
+      width: 0; /* largura inicial zero */
+      height: 95%;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(to bottom, #ffe, #ffc);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #333;
+      font-size: 22px;
+      text-align: center;
+      padding: 20px;
+      opacity: 0;
+      transition: opacity 1s ease, width 1s ease;
+      pointer-events: none;
+    }
+
+    .livro.aberto .fundo {
+      width: 90%; /* ocupa exatamente o espaço entre as páginas abertas */
+      opacity: 1;
+      pointer-events: auto;
     }
 
     .pagina {
-      width: 100%;
-      height: 100%;
-      background: white;
-      border: 2px solid #333;
       position: absolute;
-      top: 0;
-      left: 0;
-      transform-origin: left; /* vira pela esquerda */
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(to bottom, #fff, #eee);
+      border: 1px solid #ccc;
+      overflow: hidden;
+      cursor: pointer;
+      transform-style: preserve-3d;
       transition: transform 1s ease;
     }
 
-    .pagina.virada {
-      transform: rotateY(-180deg); /* gira a página */
+    /* orelhas */
+    .pagina::before, .pagina::after {
+      width: 200px;
+      background-color: black;
     }
 
-    /* conteúdo só para diferenciar */
+    .pagina.esq::before {
+      left: -40px;
+      transform-origin: top right;
+      clip-path: polygon(100% 0, 0% 0, 100% 100%);
+    }
+
+    .pagina.dir::after {
+      right: -40px;
+      transform-origin: top left;
+      clip-path: polygon(0 0, 100% 0, 0 100%);
+    }
+
+    /* esquerda e direita */
+    .pagina.esq {
+      left: 0;
+      transform-origin: left center;
+    }
+
+    .pagina.dir {
+      right: 0;
+      transform-origin: right center;
+    }
+
+    /* conteúdo da página */
     .pagina .conteudo {
+      text-align: center;
       padding: 20px;
-      font-size: 20px;
+      color: #333;
+    }
+
+    /* efeito ao abrir */
+    .livro.aberto .pagina.esq {
+      transform: rotateY(-130deg);
+    }
+
+    .livro.aberto .pagina.dir {
+      transform: rotateY(130deg);
+    }
+
+    .livro.aberto .pagina.esq::before {
+      transform: rotateZ(-45deg) translate(10px, -10px);
+    }
+
+    .livro.aberto .pagina.dir::after {
+      transform: rotateZ(45deg) translate(-10px, -10px);
     }
