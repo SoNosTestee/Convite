@@ -37,7 +37,7 @@
     }
 
     .livro.aberto .fundo {
-      width: 92.5%; /* ocupa exatamente o espaço entre as páginas abertas */
+      width: 80%; /* ocupa exatamente o espaço entre as páginas abertas */
       opacity: 1;
       pointer-events: auto;
     }
@@ -58,19 +58,23 @@
 
 
 
+
+
+
+
     /* esquerda e direita */
     .pagina.esq {
-      width: 60%;
-      left: 0;
+      width: 52%;
+      left: 6.2%;
       transform-origin: left center;
       background-color: rgb(181, 199, 151);
     }
 
     .pagina.dir {
-      width: 40%;
-      right: 0;
+      width: 35%;
+      right: 6.2%;
       transform-origin: right center;
-      background-color: rgb(181, 199, 151)
+      background-color: rgb(181, 199, 151);
     }
 
 
@@ -107,12 +111,12 @@
 
 
 .letras {
-  width: 120%;
-  height: 100%;
+  width: 117%;
+  height: 87%;
 
   position: absolute;
-  top: 0%;
-  left: -10%;
+  top: 8%;
+  left: -15%;
 }
 
 .rosas, .sombra {
@@ -121,6 +125,33 @@
 
   position: absolute;
   top: 0%;
-  left: -150%;
+  left: -165%;
 
+}
+
+.folha {
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+  top: 0%;
+  left: 0.4%;
+}
+
+.borda {
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+  top: 0%;
+  left: 0%;
+}
+
+.nomes {
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+  top: 0%;
+  left: 0%;
 }
