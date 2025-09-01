@@ -17,7 +17,7 @@
 
     .fundo {
       position: absolute;
-      width: 0;
+      width: 80%;
       height: 95%;
       top: 0;
       left: 50%;
@@ -137,15 +137,6 @@
 }
 
 .nomes {
-  width: 100%;
-  height: 100%;
-
-  position: absolute;
-  top: 0%;
-  left: 0%;
-}
-
-.local1 {
   width: 100%;
   height: 100%;
 
