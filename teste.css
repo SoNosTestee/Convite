@@ -18,9 +18,15 @@
     /* fundo central, ajustado ao espaço entre páginas */
     .fundo {
       position: absolute;
+<<<<<<< HEAD
       height: 93.5%;
       top: 0;
       width: 92%; /* tamanho do contênier */
+=======
+      width: 0; /* largura inicial zero */
+      height: 95%;
+      top: 0;
+>>>>>>> 21211efa942d120b3427660378ae433c2af8dbbb
       left: 50%;
       transform: translateX(-50%);
       background: linear-gradient(to bottom, #ffe, #ffc);
@@ -37,13 +43,22 @@
     }
 
     .livro.aberto .fundo {
+<<<<<<< HEAD
+=======
+      width: 80%; /* ocupa exatamente o espaço entre as páginas abertas */
+>>>>>>> 21211efa942d120b3427660378ae433c2af8dbbb
       opacity: 1;
       pointer-events: auto;
     }
 
     .pagina {
       position: absolute;
+<<<<<<< HEAD
       height: 100%;
+=======
+      width: 50%;
+      height: 101.5%;
+>>>>>>> 21211efa942d120b3427660378ae433c2af8dbbb
       border: 1px solid #ccc;
       overflow: hidden;
       cursor: pointer;
@@ -51,6 +66,7 @@
       transition: transform 1s ease;
     }
 
+<<<<<<< HEAD
     /* esquerda e direita */
     .pagina.esq {
       left: 0;
@@ -69,6 +85,38 @@
       transform-origin: right center;
     }
 
+=======
+
+
+
+
+
+
+
+
+
+    /* esquerda e direita */
+    .pagina.esq {
+      width: 52%;
+      left: 6.2%;
+      transform-origin: left center;
+      background-color: rgb(181, 199, 151);
+    }
+
+    .pagina.dir {
+      width: 35%;
+      right: 6.2%;
+      transform-origin: right center;
+      background-color: rgb(181, 199, 151);
+    }
+
+
+
+
+
+
+
+>>>>>>> 21211efa942d120b3427660378ae433c2af8dbbb
     /* conteúdo da página */
     .pagina .conteudo {
       text-align: center;
@@ -91,4 +139,57 @@
 
     .livro.aberto .pagina.dir::after {
       transform: rotateZ(45deg) translate(-10px, -10px);
+<<<<<<< HEAD
     }
+=======
+    }
+
+
+
+
+.letras {
+  width: 117%;
+  height: 87%;
+
+  position: absolute;
+  top: 8%;
+  left: -15%;
+}
+
+.rosas, .sombra {
+  width: 500px;
+  height: 620px;
+
+  position: absolute;
+  top: 0%;
+  left: -165%;
+
+}
+
+.folha {
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+  top: 0%;
+  left: 0.4%;
+}
+
+.borda {
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+  top: 0%;
+  left: 0%;
+}
+
+.nomes {
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+  top: 0%;
+  left: 0%;
+}
+>>>>>>> 21211efa942d120b3427660378ae433c2af8dbbb

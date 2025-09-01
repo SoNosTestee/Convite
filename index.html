@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="teste.css">
+  <title>Convite com Fundo Central</title>
+</head>
+<body>
+  <div class="livro" id="livro">
+    <!-- fundo central -->
+    <div class="fundo">
+      <img src="folha.png" alt="" class="folha">
+      <img src="borda.png" alt="" class="borda">
+      <img src="nomes.png" alt="" class="nomes">
+    </div>
+
+    <!-- Página esquerda -->
+    <div class="pagina esq">
+      <div class="conteudo">
+        <img src="letras.png" alt="" class="letras">
+      </div>
+    </div>
+    
+    <!-- Página direita -->
+    <div class="pagina dir">
+      <div class="conteudo">
+        <img src="rosas.png" alt="" class="rosas">
+        <img src="sombra.png" alt="" class="sombra">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const livro = document.getElementById("livro");
+
+    livro.addEventListener("click", () => {
+      livro.classList.toggle("aberto");
+    });
+  </script>
+</body>
+</html>
