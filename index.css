@@ -13,6 +13,10 @@ body {
   width: 500px;
   height: 600px;
   perspective: 2000px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; 
 }
 
 .fundo {

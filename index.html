@@ -51,23 +51,23 @@
     livro.classList.toggle("aberto");
 
     /* Adição de estilização dos itens de acordo com a condição da carta (Aberto/Fechado) */
-  if (livro.classList.contains("aberto")) { // If aberto
-    /* Content */
-    content.style.opacity = "0"; // Define o conteúdo dos lados da carta como opacidade 0
+    if (livro.classList.contains("aberto")) { // If aberto
+      /* Content */
+      content.style.opacity = "0"; // Define o conteúdo dos lados da carta como opacidade 0
 
-    /* Pingente */
-    Pingente.style.transition = "all ease 300ms"; // Transição para fuidez
-    Pingente.style.transform = "scale(1.3)"; // Aumenta a escala do Pingente
-    Pingente.style.opacity = "0"; // Define a opacidade para 0
-  } else { // If fechado
-    /* Content */
-    content.style.opacity = "1"; // Define o conteúdo dos lados da carta como opacidade 1
+      /* Pingente */
+      Pingente.style.transition = "all ease 300ms"; // Transição para fuidez
+      Pingente.style.transform = "scale(1.3)"; // Aumenta a escala do Pingente
+      Pingente.style.opacity = "0"; // Define a opacidade para 0
+    } else { // If fechado
+      /* Content */
+      content.style.opacity = "1"; // Define o conteúdo dos lados da carta como opacidade 1
 
-    /* Pingente */
-    Pingente.style.transition = "all ease 2000ms"; // Transição para fuidez
-    Pingente.style.opacity = "1"; // Define a opacidade para 1
-    Pingente.style.transform = "scale(1)"; // Restaura a escala do Pingente
-  }
+      /* Pingente */
+      Pingente.style.transition = "all ease 2000ms"; // Transição para fuidez
+      Pingente.style.opacity = "1"; // Define a opacidade para 1
+      Pingente.style.transform = "scale(1)"; // Restaura a escala do Pingente
+    }
 
   });
 
