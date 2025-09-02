@@ -1,103 +1,103 @@
- body {
-      margin: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background: #f0f0f0;
-      font-family: Georgia, serif;
-    }
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f0f0f0;
+  font-family: Georgia, serif;
+}
 
-    .livro {
-      position: relative;
-      width: 500px;
-      height: 600px;
-      perspective: 2000px;
-    }
+.livro {
+  position: relative;
+  width: 500px;
+  height: 600px;
+  perspective: 2000px;
+}
 
-    .fundo {
-      position: absolute;
-      width: 80%;
-      height: 95%;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      background: linear-gradient(to bottom, #ffe, #ffc);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: #333;
-      font-size: 22px;
-      text-align: center;
-      padding: 20px;
-      opacity: 0;
-      transition: opacity 1s ease, width 1s ease;
-      pointer-events: none;
-    }
+.fundo {
+  position: absolute;
+  width: 80%;
+  height: 95%;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(to bottom, #ffe, #ffc);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+  font-size: 22px;
+  text-align: center;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 1s ease, width 1s ease;
+  pointer-events: none;
+}
 
-    .livro.aberto .fundo {
-      width: 80%;
-      opacity: 1;
-      pointer-events: auto;
-    }
+.livro.aberto .fundo {
+  width: 80%;
+  opacity: 1;
+  pointer-events: auto;
+}
 
-    .pagina {
-      position: absolute;
-      width: 50%;
-      height: 101.5%;
-      border: 1px solid #ccc;
-      overflow: hidden;
-      cursor: pointer;
-      transform-style: preserve-3d;
-      transition: transform 1s ease;
+.pagina {
+  position: absolute;
+  width: 50%;
+  height: 101.5%;
+  border: 1px solid #ccc;
+  overflow: hidden;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: transform 1s ease;
 
-      transform-style: preserve-3d;
-      -webkit-transform-style: preserve-3d;
-      backface-visibility: visible;
-      -webkit-backface-visibility: visible;
-    }
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  backface-visibility: visible;
+  -webkit-backface-visibility: visible;
+}
+
+/* -------------------------------------------------------------------------------------------------------------------------- */
+
+.pagina.esq {
+  width: 52%;
+  left: 6.2%;
+  transform-origin: left center;
+  background-color: rgb(181, 199, 151);
+}
+
+.pagina.dir {
+  width: 35%;
+  right: 6.2%;
+  transform-origin: right center;
+  background-color: rgb(181, 199, 151);
+}
 
     /* -------------------------------------------------------------------------------------------------------------------------- */
 
-    .pagina.esq {
-      width: 52%;
-      left: 6.2%;
-      transform-origin: left center;
-      background-color: rgb(181, 199, 151);
-    }
+.pagina .conteudo {
+  text-align: center;
+  padding: 20px;
+  color: #333;
+}
 
-    .pagina.dir {
-      width: 35%;
-      right: 6.2%;
-      transform-origin: right center;
-      background-color: rgb(181, 199, 151);
-    }
-    
-        /* -------------------------------------------------------------------------------------------------------------------------- */
+.livro.aberto .pagina.esq {
+  transform: rotateY(-130deg);
+}
 
-    .pagina .conteudo {
-      text-align: center;
-      padding: 20px;
-      color: #333;
-    }
+.livro.aberto .pagina.dir {
+  transform: rotateY(130deg);
+}
 
-    .livro.aberto .pagina.esq {
-      transform: rotateY(-130deg);
-    }
+.livro.aberto .pagina.esq::before {
+  transform: rotateZ(-45deg) translate(10px, -10px);
+}
 
-    .livro.aberto .pagina.dir {
-      transform: rotateY(130deg);
-    }
+.livro.aberto .pagina.dir::after {
+  transform: rotateZ(45deg) translate(-10px, -10px);
+}
 
-    .livro.aberto .pagina.esq::before {
-      transform: rotateZ(-45deg) translate(10px, -10px);
-    }
-
-    .livro.aberto .pagina.dir::after {
-      transform: rotateZ(45deg) translate(-10px, -10px);
-    }
-
-        /* -------------------------------------------------------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------------------------------------------------------- */
 
 .letras {
   width: 117%;
@@ -155,11 +155,16 @@
 }
 
 .pingente {
-      width: 90%;
-      height: 100%;
-      position: absolute;
-      top: 5%;
-      left: 14%;
-      z-index: 10; /* garante que fique na frente */
+  width: 90%;
+  height: 100%;
+  position: absolute;
+  top: 5%;
+  left: 14%;
+  z-index: 10; /* garante que fique na frente */
+}
 
+  /* Alterações que eu fiz */
+
+.conteudo {
+  transition: opacity ease 600ms; /* Apenas uma transição para fuidez no conteúdo da capa*/
 }
