@@ -11,40 +11,64 @@
   <div class="livro" id="livro">
 
     <div class="fundo">
-      <img src="folha.png" alt="" class="folha">
-      <img src="borda.png" alt="" class="borda">
-      <img src="nomes.png" alt="" class="nomes">
+      <img src="images/folha.png" alt="" class="folha">
+      <img src="images/borda.png" alt="" class="borda">
+      <img src="images/nomes.png" alt="" class="nomes">
       <!--<a href="confirmação.html">
-        <img src="local1.png" alt="" class="local1">
+        <img src="images/local1.png" alt="" class="local1">
       </a> -->
     </div>
     <div class="frente">
 
-      <img src="pingente.png" alt="" class="pingente">
+      <img src="images/pingente.png" alt="" class="pingente">
 
       <div class="pagina esq">
         <div class="conteudo">
-          <img src="letras.png" alt="" class="letras">
+          <img src="images/letras.png" alt="" class="letras">
         </div>
       </div>
 
       <div class="pagina dir">
         <div class="conteudo">
-          <img src="rosas.png" alt="" class="rosas">
-          <img src="sombra.png" alt="" class="sombra">
+          <img src="images/rosas.png" alt="" class="rosas">
+          <img src="images/sombra.png" alt="" class="sombra">
         </div>
       </div>
     </div>
 
   </div>
-
-  <script>
-    const livro = document.getElementById("livro");
-
-    livro.addEventListener("click", () => {
-      livro.classList.toggle("aberto");
-    });
-    
-  </script>
 </body>
 </html>
+
+<script>
+  const livro = document.getElementById("livro");
+
+  const Pingente = document.querySelector(".pingente");
+
+  const content = document.querySelector(".conteudo");
+
+  livro.addEventListener("click", () => {
+    livro.classList.toggle("aberto");
+
+    /* Adição de estilização dos itens de acordo com a condição da carta (Aberto/Fechado) */
+  if (livro.classList.contains("aberto")) { // If aberto
+    /* Content */
+    content.style.opacity = "0"; // Define o conteúdo dos lados da carta como opacidade 0
+
+    /* Pingente */
+    Pingente.style.transition = "all ease 300ms"; // Transição para fuidez
+    Pingente.style.transform = "scale(1.3)"; // Aumenta a escala do Pingente
+    Pingente.style.opacity = "0"; // Define a opacidade para 0
+  } else { // If fechado
+    /* Content */
+    content.style.opacity = "1"; // Define o conteúdo dos lados da carta como opacidade 1
+
+    /* Pingente */
+    Pingente.style.transition = "all ease 2000ms"; // Transição para fuidez
+    Pingente.style.opacity = "1"; // Define a opacidade para 1
+    Pingente.style.transform = "scale(1)"; // Restaura a escala do Pingente
+  }
+
+  });
+
+</script>
