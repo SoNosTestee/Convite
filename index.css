@@ -13,6 +13,10 @@ body {
   width: 500px;
   height: 600px;
   perspective: 2000px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; 
 }
 
 .fundo {
@@ -81,6 +85,10 @@ body {
   color: #333;
 }
 
+.livro.aberto .pagina {
+  pointer-events: none; /* desativa clique nas páginas */
+}
+
 .livro.aberto .pagina.esq {
   transform: rotateY(-130deg);
 }
@@ -96,6 +104,7 @@ body {
 .livro.aberto .pagina.dir::after {
   transform: rotateZ(45deg) translate(-10px, -10px);
 }
+
 
 /* -------------------------------------------------------------------------------------------------------------------------- */
 
@@ -160,11 +169,42 @@ body {
   position: absolute;
   top: 5%;
   left: 14%;
-  z-index: 10; /* garante que fique na frente */
+  z-index: 3; 
+  pointer-events: none;
 }
 
   /* Alterações que eu fiz */
 
 .conteudo {
-  transition: opacity ease 600ms; /* Apenas uma transição para fuidez no conteúdo da capa*/
+  transition: opacity ease 600ms;
+}
+
+.Buttons {
+  position: absolute;
+  bottom: 20%;
+  align-items: center;
+  display: flex;
+  gap: 2rem;
+  z-index: 4;
+  width: 70%;
+  height: 100px;
+  pointer-events: auto;
+  display: flex;
+}
+
+.Buttons a {
+  border-radius: 8px;
+  text-decoration: none;
+  color: #333;
+  flex: 1;
+  transition: transform 0.2s ease;
+}
+
+.Buttons a:hover {
+  transform: scale(1.1);
+}
+
+.Buttons a img {
+  width: 100%;
+  height: 100%;
 }
