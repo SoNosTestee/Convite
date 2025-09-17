@@ -85,6 +85,10 @@ body {
   color: #333;
 }
 
+.livro.aberto .pagina {
+  pointer-events: none; /* desativa clique nas páginas */
+}
+
 .livro.aberto .pagina.esq {
   transform: rotateY(-130deg);
 }
@@ -100,6 +104,7 @@ body {
 .livro.aberto .pagina.dir::after {
   transform: rotateZ(45deg) translate(-10px, -10px);
 }
+
 
 /* -------------------------------------------------------------------------------------------------------------------------- */
 
@@ -164,11 +169,36 @@ body {
   position: absolute;
   top: 5%;
   left: 14%;
-  z-index: 10; /* garante que fique na frente */
+  z-index: 3; 
+  pointer-events: none;
 }
 
   /* Alterações que eu fiz */
 
 .conteudo {
-  transition: opacity ease 600ms; /* Apenas uma transição para fuidez no conteúdo da capa*/
+  transition: opacity ease 600ms;
+}
+
+.Buttons {
+  position: absolute;
+  bottom: 28%;
+  display: flex;
+  gap: 2em;
+  z-index: 9999; /* garante que fica acima de tudo */
+  pointer-events: auto; /* garante que clique passa pros botões */
+}
+
+.Buttons a {
+  background: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease;
+}
+
+.Buttons a:hover {
+  transform: scale(1.1);
 }
