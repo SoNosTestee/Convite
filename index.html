@@ -14,6 +14,7 @@
       <img src="images/folha.png" alt="" class="folha">
       <img src="images/borda.png" alt="" class="borda">
       <img src="images/nomes.png" alt="" class="nomes">
+      <img src="images/local1.png" alt="" class="local1">
 
       <div class="Buttons">
         <a href="#"><img src="/images/confirmação.png" alt=""></a>
@@ -45,6 +46,7 @@
 </html>
 
 <script>
+  
   const livro = document.getElementById("livro");
   const Pingente = document.querySelector(".pingente");
   const content = document.querySelector(".conteudo");
@@ -65,12 +67,19 @@
       /* Content */
       content.style.opacity = "1"; // Define o conteúdo dos lados da carta como opacidade 1
 
+    /* Pingente */
+    Pingente.style.transition = "all ease 2000ms"; // Transição para fuidez
+    Pingente.style.opacity = "1"; // Define a opacidade para 1
+    Pingente.style.transform = "scale(1)"; // Restaura a escala do Pingente
+  }
+
+});
       /* Pingente */
       Pingente.style.transition = "all ease 2000ms"; // Transição para fuidez
       Pingente.style.opacity = "1"; // Define a opacidade para 1
       Pingente.style.transform = "scale(1)"; // Restaura a escala do Pingente
     }
-  });
+});
 
 
 </script>

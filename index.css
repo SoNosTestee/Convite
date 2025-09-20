@@ -207,4 +207,12 @@ body {
 .Buttons a img {
   width: 100%;
   height: 100%;
+  transition: opacity ease 600ms; /* Apenas uma transição para fuidez no conteúdo da capa*/
+}
+
+.local1 {
+  width: 22%;
+  height: 16%;
+  top: 64%;
+  left: 13%;
 }
